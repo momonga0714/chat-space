@@ -6,20 +6,21 @@
                 %li.member-first Member:tomoki
         .header-right
             .edit-btn
-                %a{ href: "#"} Edit
+                = link_to("Edit","#")
+                 
     .messages
         .one-message 
-            .name-box
-                %p.one-message__text tomoki
-                %ul.one-message__day
-                    %li.one-message__day__time 2020/03/27
-            .message-box
+            .one-message__name-box
+                %p.one-message__name-box__text tomoki
+                %ul.one-message__name-box__day
+                    %li.one-message__name-box__day__time 2020/03/27
+            .one-message_box
                 %p.name-box__text 今日はあったかい
-            .name-box
-                %p.one-message__text tomoki
-                %ul.one-message__day
-                    %li.one-message__day__time 2020/03/27
-            .message-box
+            .one-message__name-box
+                %p.one-message__name-box__text tomoki
+                %ul.one-message__name-box__day
+                    %li.one-message__name-box__day__time 2020/03/27
+            .one-message_box
                 %p.name-box__text 今日はあったかい
     .main-footer
         .new-message
