@@ -1,0 +1,128 @@
+
+.chat-main{
+  height: calc(100vh - 100px);
+  width: calc(100vw - 300px);
+  background-color: #fafafa;
+  float: right;
+
+  .main-header{
+    width: calc(100vw - 300px);
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-bottom: 1px solid #eee;
+
+    .header-left{
+       margin-top: 35px;
+      .current-group{
+        margin-bottom:15px;
+      }
+      .member-list{
+        display: flex;
+        .member-first{
+        font-size: 12px;
+        list-style: none;
+        color: #999999;
+        }
+      }
+    }
+    .header-right{
+      margin-top: 28px;
+      .edit-btn{
+        font-size: 16px;
+        height: 40px;
+        width: 72px;
+        line-height: 40px;
+        border: 1px solid #38aef0;
+        text-align: center;
+        cursor: pointer;
+        a{
+          text-decoration: none;
+          color: #38aef0;
+        }
+      }
+    }
+  }    
+  .messages{
+    margin-top: 35px;
+    margin-left: 40px;
+    .one-message{
+      .name-box{
+        margin-bottom: 12px;
+        display: flex;
+        .one-message__text{
+          color: #333333;
+          font-size: 16px;
+        }
+        .one-message__day{
+          display: flex;
+        .one-message__day__time{
+          color: #999999;
+          font-size: 12px;
+          list-style: none;
+          margin-left: 5px;
+          }
+        }
+      }
+      .message-box{
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 46px;
+      }
+    }
+  }
+  .main-footer{
+  height: 90px;
+  width: calc(100vw - 300px);
+  background-color: #d2d2d2;
+  position: absolute;
+  bottom: 0;
+  padding: 0 40px;
+    .new-message{
+      display: flex;
+      .new-message__box{
+        display: flex;
+        height: 50px;
+        background-color: #ffffff;
+        margin-top:20px;
+        margin-bottom: 20px;
+        border-style: none;
+        justify-content: space-between;
+        text-align: center;
+        .input-text{
+          height: 50px;
+          padding: 0 10px;
+          border-style: none;
+          width: calc(100vw - 550px);
+        }
+        .hyde{
+          display: none;
+        }
+        .far.fa-image{
+          font-size: 25px;
+          line-height: 50px;
+          color: black;
+          border: 1px solid none;
+          width: 50px;
+          height: 50px;
+          margin: 0 auto;
+          cursor: pointer;
+        }
+      }
+      .submit-btn{
+        width: 100px;
+        height: 50px;
+        background-color: #38aef0;
+        margin-left: 15px;
+        margin-top:20px;
+        margin-bottom: 20px;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 0 20px;
+      }
+    }
+  }
+}
