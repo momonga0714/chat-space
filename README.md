@@ -23,6 +23,7 @@ Things you may want to cover:
 
 * ...
 
+
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -55,7 +56,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :group
- 
+
 
 
 ## groupsテーブル

@@ -1,0 +1,16 @@
+.chat-side
+    .side-header
+        .side-header__box
+            %p.side-header__box__user-name tomoki
+            %ul.edit
+                = link_to "#" do
+                    =icon('far', 'edit')
+                %li.edit-icon
+                = link_to "#" do
+                    =icon('fas', 'cog')
+                %li.user-icon
+    .groups
+        %ul.groups__all 
+            %li.groups__all__first techcamp
+            %li.groups__all__second まだメッセージがありません
+            
