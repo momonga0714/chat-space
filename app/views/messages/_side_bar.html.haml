@@ -1,16 +1,21 @@
 .chat-side
     .side-header
         .side-header__box
-            %p.side-header__box__user-name tomoki
+            %p.side-header__box__user-name 
+                = current_user.name
             %ul.edit
-                = link_to "#" do
+                = link_to new_group_path do
                     =icon('far', 'edit')
                 %li.edit-icon
-                = link_to "#" do
-                    =icon('fas', 'cog')
+                = link_to edit_user_path(current_user) do
+                    =icon('fas', 'cog',class: 'icon')
                 %li.user-icon
     .groups
-        %ul.groups__all 
-            %li.groups__all__first techcamp
-            %li.groups__all__second まだメッセージがありません
+        - current_user.groups.each do |group|
+            .groups__all
+                = link_to "/groups/#{group.id}/edit" do
+                    .groups__all__first
+                        = group.name
+                    .groups__all__second
+                        まだメッセージがありません
             
