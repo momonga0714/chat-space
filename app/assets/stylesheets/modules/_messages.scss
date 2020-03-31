@@ -18,14 +18,15 @@
         display: flex;
         justify-content: space-between;
         line-height: 20px;
+        color: #ffffff;
           &__user-name{
-            color: #ffffff;
             font-size: 16px;
           }
           .edit{
             display: flex;
             a{
               color: #ffffff;
+              text-decoration: none;
             }
             .edit-icon{
               margin-left: 5px;
@@ -41,6 +42,11 @@
     padding-left: 20px;
     padding-bottom: 40px;
     &__all{
+      a{
+        text-decoration: none;
+      }
+      
+      
       &__first{
         font-size: 15px;
         color: #ffffff;
