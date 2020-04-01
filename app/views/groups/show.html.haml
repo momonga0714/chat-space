@@ -1,0 +1,15 @@
+.wrapper
+    = render "messages/side_bar"
+.chat-main
+    .main-header
+        .header-left
+            .current-group
+                .member-list
+                    = @group.name
+                .member-first
+        .header-right
+            .edit-btn
+                = link_to("Edit",edit_group_path)
+    .messages
+        = render partial: 'messages/message', collection: @messages
+    = render "show"
