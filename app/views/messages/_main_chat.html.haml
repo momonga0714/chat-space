@@ -1,12 +1,13 @@
 .chat-main
     .main-header
         .header-left
-            - current_user.groups.each do |group|
-                .current-group
-                    .member-list
-                        = group.name
-                    .member-first 
-
+            .current-group
+                .member-list
+                    = @group.name
+            .member-first 
+                - @user.each do |user|
+                    .name-list
+                        = "  Member: #{user.name}    " "  "
         .header-right
             .edit-btn
                 = link_to("Edit","#")

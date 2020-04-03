@@ -13,9 +13,7 @@
     .groups
         - current_user.groups.each do |group|
             .groups__all
-                = link_to group_path(group) do
+                = link_to group_messages_path(group) do
                     .groups__all__first
                         = group.name
-                    .groups__all__second
-                        
-            
+                    

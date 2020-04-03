@@ -17,21 +17,18 @@
 
     .header-left{
        margin-top: 35px;
-       a{
-         text-decoration: none;
-         color:#333333;
-       }
       .current-group{
         margin-bottom:15px;
       }
       .member-list{
         display: flex;
-        .member-first{
+      }
+      .member-first{
         font-size: 12px;
         list-style: none;
         color: #999999;
+        display: flex;
         }
-      }
     }
     .header-right{
       margin-top: 28px;
@@ -51,8 +48,10 @@
     }
   }    
   .messages{
-    margin-top: 35px;
-    margin-left: 40px;
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
+    background-color: #fafafa;
+    overflow: scroll;
     .one-message{
       &__name-box{
         margin-bottom: 12px;
@@ -87,6 +86,7 @@
   padding: 0 40px;
     .new-message{
       display: flex;
+      margin-right: 0;
       &__box{
         display: flex;
         height: 50px;
@@ -114,16 +114,17 @@
           margin: 0 auto;
           cursor: pointer;
         }
+        .submit-btn{
+          width: 100px;
+          height: 50px;
+          background-color: #38aef0;
+          
+          color: #ffffff;
+          cursor: pointer;
+          padding: 0 20px;
+        }
       }
-      .submit-btn{
-        width: 100px;
-        height: 50px;
-        background-color: #38aef0;
-        margin: 20px 0 20px 15px;
-        color: #ffffff;
-        cursor: pointer;
-        padding: 0 20px;
-      }
+      
     }
   }
 }
