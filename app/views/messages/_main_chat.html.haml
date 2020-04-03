@@ -7,13 +7,12 @@
             .member-first 
                 - @user.each do |user|
                     .name-list
-                        = "  Member: #{user.name}    " "  "
+                        = "Member: #{user.name}"
         .header-right
             .edit-btn
                 = link_to("Edit","#")
     .messages
         = render @messages
-        
     .main-footer
         = form_for [@group, @message] do |f|
             .new-message

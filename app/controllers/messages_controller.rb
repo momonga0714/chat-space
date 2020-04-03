@@ -6,13 +6,9 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
   end
 
-
   def new
     @message = Message.new
   end
-
-
-
 
   def create
     @message = @group.messages.new(message_params)
@@ -26,7 +22,6 @@ class MessagesController < ApplicationController
       render :index
     end
   end
-
 
   private
   def message_params
