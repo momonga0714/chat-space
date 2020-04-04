@@ -4,13 +4,14 @@
             .current-group
                 .member-list
                     = @group.name
-            .member-first 
-                - @user.each do |user|
-                    .name-list
-                        = "Member: #{user.name}"
+            .member-first
+                %p.member-first__box Member : 
+                - @group.users.each do |user|
+                    .member-first__box__name
+                        = user.name
         .header-right
             .edit-btn
-                = link_to("Edit","#")
+                = link_to("Edit","/groups/#{@group.id}/edit")
     .messages
         = render @messages
     .main-footer
