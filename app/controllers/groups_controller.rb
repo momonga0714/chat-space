@@ -2,10 +2,8 @@ class GroupsController < ApplicationController
 
   def index
     @group = Group.includes(:user)
-    
   end
 
-  
   def new
     @group = Group.new
     @group.users << current_user
@@ -18,7 +16,6 @@ class GroupsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def edit
@@ -32,7 +29,6 @@ class GroupsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   private
