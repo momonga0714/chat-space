@@ -1,8 +1,8 @@
 $(function(){
-
+  
   function buildHTML(message){
     if (message.image) {
-      var html = `<div class="one-message">
+      var html = `<div class=one-message" data-message-id=${message.id}>
                     <div class="one-message__name__box">
                       ${message.user_name}
                     </div>
@@ -18,7 +18,7 @@ $(function(){
                     <img src=${message.image} >`
       return html;
     } else {
-      var html = `<div class="one-message">
+      var html = `<div class="one-message" data-message-id=${message.id}>
                     <div class="one-message__name__box">
                       ${message.user_name}
                     </div>
@@ -31,10 +31,9 @@ $(function(){
                       ${message.content}
                     </p>
                   </div>`
-      return html;
-    };
+                return html;
+                };
   }
-
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -58,4 +57,31 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     });
   })
+  var reloadMessages = function() {
+    
+    var last_message_id = $('.one-message:last').data("message-id");
+    
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.one-messages').append(insertHTML);
+      $('.one-messages').animate({ scrollTop: $('.one-messages')[0].scrollHeight});
+      }
+    })
+    .fail(function() {
+      alert('error');
+    });
+  };
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 });

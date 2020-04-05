@@ -1,10 +1,11 @@
-.one-message 
-    .one-message__name__box
-        = message.user.name
-    .one-message__name__day
-        = message.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]}) %H:%M")
-.one-message_box
-    - if message.content.present?
-        %p.name-box__text
-            = message.content
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.message{data: {message: {id: message.id}}}
+    .one-message 
+        .one-message__name__box
+            = message.user.name
+        .one-message__name__day
+            = message.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]}) %H:%M")
+    .one-message_box
+        - if message.content.present?
+            %p.name-box__text
+                = message.content
+        = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
