@@ -50,11 +50,13 @@ $(function(){
       var html = buildHTML(data);
       $(".messages").append(html);
       $(".input-text").val("");
+      $("#message_image").val("");
       $(".submit-btn").prop("disabled",false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      location.href = 'messages';
     });
   })
   var reloadMessages = function() {
@@ -73,12 +75,15 @@ $(function(){
       $.each(messages, function(i, message) {
         insertHTML += buildHTML(message)
       });
-      $('.one-messages').append(insertHTML);
-      $('.one-messages').animate({ scrollTop: $('.one-messages')[0].scrollHeight});
+      $('.one-message__box').append(insertHTML);
+      
+      $('.one-message__box').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      
       }
     })
     .fail(function() {
       alert('error');
+      location.href = 'messages';
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
