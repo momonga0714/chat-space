@@ -16,3 +16,5 @@
                 = link_to group_messages_path(group) do
                     .groups__all__first
                         = group.name
+                    .groups__all__content
+                        = group.show_last_message
