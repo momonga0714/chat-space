@@ -2,7 +2,8 @@ $(function(){
   
   function buildHTML(message){
     if (message.image) {
-      var html = `<div class=one-message" data-message-id=${message.id}>
+      var html = `<div class="message" data-message-id=${message.id}>
+                  <div class=one-message">
                     <div class="one-message__name__box">
                       ${message.user_name}
                     </div>
@@ -15,21 +16,25 @@ $(function(){
                       ${message.content}
                     </p>
                   </div>
-                    <img src=${message.image} >`
+                    <img src=${message.image} >
+                  </div>
+                    `
       return html;
     } else {
-      var html = `<div class="one-message" data-message-id=${message.id}>
-                    <div class="one-message__name__box">
-                      ${message.user_name}
+      var html = `<div class="message" data-message-id=${message.id}>
+                    <div class="one-message">
+                      <div class="one-message__name__box">
+                        ${message.user_name}
+                      </div>
+                      <div class="one-message__name__day">
+                        ${message.created_at}
+                      </div>
                     </div>
-                    <div class="one-message__name__day">
-                      ${message.created_at}
+                    <div class="one-message_box">
+                      <p class="name-box__text">
+                        ${message.content}
+                      </p>
                     </div>
-                  </div>
-                  <div class="one-message_box">
-                    <p class="name-box__text">
-                      ${message.content}
-                    </p>
                   </div>`
                 return html;
                 };
@@ -60,9 +65,7 @@ $(function(){
     });
   })
   var reloadMessages = function() {
-    
-    var last_message_id = $('.one-message:last').data("message-id");
-    
+    var last_message_id = $('.message:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -75,9 +78,9 @@ $(function(){
       $.each(messages, function(i, message) {
         insertHTML += buildHTML(message)
       });
-      $('.one-message__box').append(insertHTML);
+      $('.messages').append(insertHTML);
       
-      $('.one-message__box').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       
       }
     })
