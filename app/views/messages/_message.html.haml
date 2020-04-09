@@ -4,8 +4,8 @@
             = message.user.name
         .one-message__name__day
             = message.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]}) %H:%M")
-    .one-message_box
-        - if message.content.present?
+    - if message.content.present?
+        .name-box
             %p.name-box__text
                 = message.content
-        = image_tag message.image.url, class: 'one-message_box__image' if message.image.present?
+    = image_tag message.image.url, class: 'name-box__image' if message.image.present?
