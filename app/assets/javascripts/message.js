@@ -3,41 +3,28 @@ $(function(){
   function buildHTML(message){
     if (message.image) {
       var html = `<div class="message" data-message-id=${message.id}>
-                  <div class=one-message">
-                    <div class="one-message__name__box">
-                      ${message.user_name}
-                    </div>
-                    <div class="one-message__name__day">
-                      ${message.created_at}
-                    </div>
-                  </div>
-                  <div class="one-message_box">
-                    <p class="name-box__text">
-                      ${message.content}
-                    </p>
-                  </div>
-                    <img src=${message.image} >
-                  </div>
-                    `
-      return html;
+                      <div class="one-message">
+                        <p class="one-message__name__box">${message.user_name}</p>
+                        <p class="one-message__name__day">${message.created_at}</p>
+                      </div>
+                      <div class="name-box">
+                        <p class="name-box__text">${message.content}</p>
+                      </div>
+                      <img src=${message.image}>
+                  </div>`
+                return html;
     } else {
       var html = `<div class="message" data-message-id=${message.id}>
                     <div class="one-message">
-                      <div class="one-message__name__box">
-                        ${message.user_name}
-                      </div>
-                      <div class="one-message__name__day">
-                        ${message.created_at}
-                      </div>
+                      <p class="one-message__name__box">${message.user_name}</p>
+                      <p class="one-message__name__day">${message.created_at}</p>
                     </div>
-                    <div class="one-message_box">
-                      <p class="name-box__text">
-                        ${message.content}
-                      </p>
+                    <div class="name-box">
+                      <p class="name-box__text">${message.content}</p>
                     </div>
                   </div>`
                 return html;
-                };
+    };
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();

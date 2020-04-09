@@ -85,6 +85,7 @@ li {
   line-height: 50px;
   font-size: 14px;
   border-bottom: 1px solid #ddd;
+  
   &:after {
     content: "";
     clear: both;
@@ -103,4 +104,8 @@ li {
       color: #f05050;
     }
   }
+}
+
+.chat-group-form .chat-group-user .chat-group-user__btn {
+  float: right;
 }
